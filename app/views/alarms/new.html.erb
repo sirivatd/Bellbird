@@ -1,6 +1,9 @@
-<h1>Create a new alarm</h1>
+<div class="header">
+<h1 class="logo-text">Bellbird</h1>
+<a class="new-alarm" href="<%= new_alarm_url %>">Create a new alarm</a>
+</div>
 
-<form action="/alarms" method="post">
+<form class="new-alarm-form" action="/alarms" method="post">
 
 <label for="alarm_description">Alarm Description</label>
 <input type="text" name="alarm[description]" id="alarm_description" style="text-transform:uppercase">

@@ -1,13 +1,20 @@
-<h1>All the alarms!</h1>
+<div class="header">
+<h1 class="logo-text">Bellbird</h1>
+<a class="new-alarm" href="<%= new_alarm_url %>">Create a new alarm</a>
+</div>
+
 
 <% @alarms.reverse.each do |alarm| %>
-<li><a href="<%= alarm_url(alarm) %>"><%= alarm.description%></a><%= alarm.age %><%= alarm.likes.length %></li>
+<li class="alarm-item"><h2><%= alarm.description%></h2><%= alarm.alarm_time.strftime("%I") %>:<%=alarm.alarm_time.strftime("%M") %> <%= alarm.alarm_time.strftime("%p")%>
+<div class="likes-section">
+<h3 class="num-likes"><%= alarm.likes.length %></h3>
+</div>
 <form action="/likes" method="post">
 <input type="hidden" name="like[alarm_id]" id="alarm_upvote" value="<%= alarm.id %>">
 <input type="submit" value="Upvote">
 </form>
+</li>
 <% end %>
 </ul>
 
-<a href="<%= new_alarm_url %>">Create a new alarm</a>
 
