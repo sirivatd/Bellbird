@@ -1,0 +1,16 @@
+<h1>Create a new alarm</h1>
+
+<form action="/alarms" method="post">
+
+<label for="alarm_description">Alarm Description</label>
+<input type="text" name="alarm[description]" id="alarm_description" style="text-transform:uppercase">
+
+<label for="alarm_date">Date</label>
+<input type="date" id="alarm_date" name="alarm[alarm_date]">
+
+<label for="alarm_time">Time</label>
+<input type="time" id="alarm_time" name="alarm[alarm_time]">
+
+<input type="submit" value="Create Alarm">
+
+</form>

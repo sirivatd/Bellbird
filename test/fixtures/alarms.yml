@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  alarm_time: 2018-11-28 10:04:00
+  alarm_date: 2018-11-28
+
+two:
+  description: MyString
+  alarm_time: 2018-11-28 10:04:00
+  alarm_date: 2018-11-28

@@ -1,0 +1,9 @@
+<h1>All the alarms!</h1>
+
+<% @alarms.each do |alarm| %>
+<li><a href="<%= alarm_url(alarm) %>"><%= alarm.description%></a></li>
+<% end %>
+</ul>
+
+<a href="<%= new_alarm_url %>">Create a new alarm</a>
+
