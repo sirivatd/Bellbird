@@ -1,3 +1,5 @@
+
+
 class AlarmsController < ApplicationController
     def index
         @alarms = Alarm.all
@@ -10,6 +12,7 @@ class AlarmsController < ApplicationController
     def create
         @alarm = Alarm.new(alarm_params)
         if @alarm.save
+            @alarm.send_push
             redirect_to alarms_url
         else
             flash.now[:errors] = @alarm.errors.full_messages

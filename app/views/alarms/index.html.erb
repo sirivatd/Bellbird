@@ -1,7 +1,11 @@
 <h1>All the alarms!</h1>
 
-<% @alarms.each do |alarm| %>
-<li><a href="<%= alarm_url(alarm) %>"><%= alarm.description%></a></li>
+<% @alarms.reverse.each do |alarm| %>
+<li><a href="<%= alarm_url(alarm) %>"><%= alarm.description%></a><%= alarm.age %><%= alarm.likes.length %></li>
+<form action="/likes" method="post">
+<input type="hidden" name="like[alarm_id]" id="alarm_upvote" value="<%= alarm.id %>">
+<input type="submit" value="Upvote">
+</form>
 <% end %>
 </ul>
 
